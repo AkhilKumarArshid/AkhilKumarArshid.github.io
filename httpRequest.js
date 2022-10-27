@@ -3,7 +3,7 @@ import {updateTopCitiesData} from './topCities.js';
 import {updateContinentsData } from './citiesAtGlance.js';
 
 
-var url = "http://localhost:8080/all-timezone-cities";
+var url = "https://soliton.glitch.me/all-timezone-cities";
 async function getcontent () {
     let response = await fetch(url);
 
@@ -42,7 +42,7 @@ function getNextNHoursWeather(city) {
               redirect: "follow",
             };
 
-            let resp = fetch("http://localhost:8080/hourly-forecast", requestOptions)
+            let resp = fetch("https://soliton.glitch.me/hourly-forecast", requestOptions)
               .then((response) => response.json())
               .catch((error) => console.log("error", error));
 
@@ -58,7 +58,7 @@ function getCityDateAndTime(city) {
         method: "GET",
         redirect: "follow",
       };
-      let url = "http://localhost:8080/date-time?city=" + city;
+      let url = "https://soliton.glitch.me/date-time?city=" + city;
 
       let result = fetch(url, requestOptions)
         .then((response) => response.json())
