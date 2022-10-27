@@ -53,7 +53,7 @@ class SelectedCityDetails {
       this.precipitationValue = precipitation;
       this.nextFiveHrs = cityInfo.nextFiveHrs;
       this.weatherIcon = "Assets/HTML&CSS/Weather Icons/" + getWeatherIcon(temperature);
-      this.cityIcon = '/Assets/HTML&CSS/Icons_for_cities/' + cityInfo.cityName + '.svg';
+      this.cityIcon = '/Assets/HTML&CSS/Icons_for_cities/' + cityInfo.cityName.toLowerCase() + '.svg';
       this.timeFormat = timeFormat;
       this.timeFormatIcon = formatIcon;
       this.continent = getContName(cityInfo.timeZone);
