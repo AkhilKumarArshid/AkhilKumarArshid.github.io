@@ -1,0 +1,25 @@
+{
+  "name": "akhil_webtips_assignment",
+  "version": "1.0.0",
+  "description": "this file is part of WebTIPS Assignment repository\r **Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+  "main": "citiesAtGlance.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://AkhilKumarArshid@bitbucket.org/akhilkumararshid/akhil_webtips_assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/akhilkumararshid/akhil_webtips_assignment/issues"
+  },
+  "homepage": "https://bitbucket.org/akhilkumararshid/akhil_webtips_assignment#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}

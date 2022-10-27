@@ -1,0 +1,394 @@
+<html>
+    <head>
+        <title>Weather updates</title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="httpRequest.js"></script>
+        <script type="module" src="citiesData.js"></script>
+        <script type="module" src="topCities.js"></script>
+        <script type="module" src="citiesAtGlance.js"></script>
+
+        
+    </head>
+
+    <body>
+        <!-- this section displays the details of the selected city from the input box-->
+        <div class="container-1">
+            <div class="container-2">
+                <div class="city">
+                    <img class="city-icon" id="c-icon" src="/Assets/HTML&CSS/Icons_for_cities/london.svg" alt="city-image">
+                </div>
+                <div class="city-details">
+                <div>
+                    <form>
+                        <input list="cities" class="selected-city" name="cities">
+                        <datalist id="cities" >
+                            <!-- <option value="London"></option> -->
+                        </datalist>
+                    </form>
+                </div>
+                <div class="time"> <span id="hour-minute" class="hour-minute">10:10:</span> </span><span id="seconds" class="seconds">44</span>
+                    <span ><img class="am-icon" id="am-icon" src="/Assets/HTML&CSS/General Images & Icons/amState.svg" alt="am-icon"></span>
+                </div>
+                
+                <div id="date" class="date">22-Sep-2022</div>
+            </div>
+            </div>
+            <div class="container-3">
+                <div class="params">
+                    <div class="temp">Temp °C <br><span id="temperature"class="temp-value">25</span> C</div>
+                
+                    <div class="temp test">Humidity <br><span id="humidity" class="temp-value">26<span>%</span></span></div>
+                    <div class="temp">Temp F <br><span id="temperature-f" class="temp-value">78</span><span> F</span></div>
+                
+                <div class="temp test">precipitation <br><span id="precipitation" class="temp-value">0 <span>%</span></span></div>
+            </div>
+            </div>
+            <div class="container-4">
+                <div class="timing">
+                    <span class="hour" id="hour0">Now</span>
+                    <span class="hour" id="hour1">11AM</span>
+                    <span class="hour" id="hour2">12PM</span>
+                    <span class="hour" id="hour3">1PM</span>
+                    <span class="hour" id="hour4">2PM</span>
+                    <span class="hour" id="hour5">3PM</span> 
+                </div>
+                <div class="lines">
+                    <span class="vertical-line"></span>
+                    <span class="vertical-line"></span>
+                    <span class="vertical-line"></span>
+                    <span class="vertical-line"></span>
+                    <span class="vertical-line"></span>
+                    <span class="vertical-line"></span>
+                </div>
+
+                <div class="weather-icons">
+                    <span class="hour"><img id="weather-icons-0" src="Assets/HTML&CSS/Weather Icons/cloudyIcon.svg" alt="cloudyIcon.svg"></span>
+                    <span class="hour"><img id="weather-icons-1" src="Assets/HTML&CSS/Weather Icons/rainyIcon.svg" alt="rainyIcon.svg"></span>
+                    <span class="hour"><img id="weather-icons-2" src="Assets/HTML&CSS/Weather Icons/windyIcon.svg" alt="windyIcon.svg"></span>
+                    <span class="hour"><img id="weather-icons-3" src="Assets/HTML&CSS/Weather Icons/rainyIcon.svg" alt="rainyIcon.svg"></span>
+                    <span class="hour"><img id="weather-icons-4" src="Assets/HTML&CSS/Weather Icons/windyIcon.svg" alt="windyIcon.svg"></span>
+                    <span class="hour"><img id="weather-icons-5" src="Assets/HTML&CSS/Weather Icons/rainyIcon.svg" alt="rainyIcon.svg"></span> 
+                </div>
+
+                <div class="prep">
+                    <span class="prep-items" id="temperature-0">6</span>
+                    <span class="prep-items" id="temperature-1">7</span>
+                    <span class="prep-items" id="temperature-2">7</span>
+                    <span class="prep-items" id="temperature-3">8</span>
+                    <span class="prep-items" id="temperature-4">8</span>
+                    <span class="prep-items" id="temperature-5">6</span> 
+                </div>
+            </div>
+<!-- this section displays the top cities around the world as cards and changes according to the user input/preferences-->
+        </div>
+        <section>
+        <div class="main-container-2">
+            <div class="top-cities">
+                <div class="top-cities-text">Top Cities around world</div>
+                <div class="selection-icons">
+                <div id="select-icons">
+                    <img id="sunnyIcon" class="w-icon" src="Assets/HTML&CSS/Weather Icons/sunnyIcon.svg" alt="sunnyIcon.svg">
+                    <img id="snowflakeIcon" class="w-icon" src="Assets/HTML&CSS/Weather Icons/snowflakeIcon.svg" alt="snowflakeIcon.svg">
+                    <img id="rainyIconBlack" class="w-icon" src="Assets/HTML&CSS/Weather Icons/rainyIconBlack.svg" alt="rainyIconBlack.svg">
+                </div>
+                <div class="display-top">
+                    <form>
+                        <label for="top">Display Top</label>
+                        <input class="display-top-number" type="number" size="1" id="top" name="top" min="3" max="10">
+                    </form>
+                </div>
+            </div> 
+            </div>
+            <div class="top-selected-cities">
+                <!-- ask for navigation icons (previous and next)-->
+                <a class="next-prev" id="previous" href="#">&#8249;</a>
+                <div class="city-list">
+                <ul id="city-list" class="cities-container">
+                    <li>
+                <div class="city-detail" id="city-1">
+                    <div class="city-info">
+                        <span class="bold-text">London11</span>
+                        <span class="bold-stext">10:00</span>
+                        <span class="bold-stext">2-Mar-2022</span>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="precipitationIcon.svg">
+                            <span>53%</span>
+                        </div>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/precipitationIcon.svg" alt="precipitationIcon.svg">
+                            <span>10%</span>
+                        </div>
+                    </div>
+                    <div class="temp-info">
+                        <img class="temp-icon" src="Assets/HTML&CSS/Weather Icons/sunnyIcon.svg" alt="sunnyIcon.svg">
+                        <span class="bold-text">25 °C</span>
+                        <div class="top-city-icon">
+                            <img class="city-icon" src="Assets/HTML&CSS/Icons_for_cities/london.svg" alt="city-image">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="city-detail" id="city-2">
+                    <div class="city-info">
+                        <span class="bold-text">London</span>
+                        <span class="bold-stext">10:00</span>
+                        <span class="bold-stext">2-Mar-2022</span>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="precipitationIcon.svg">
+                            <span>53%</span>
+                        </div>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/precipitationIcon.svg" alt="precipitationIcon.svg">
+                            <span>10%</span>
+                        </div>
+                    </div>
+                    <div class="temp-info">
+                        <img class="temp-icon" src="Assets/HTML&CSS/Weather Icons/sunnyIcon.svg" alt="sunnyIcon.svg">
+                        <span class="bold-text">25 °C</span>
+                        <div class="top-city-icon">
+                            <img class="city-icon" src="Assets/HTML&CSS/Icons_for_cities/london.svg" alt="city-image">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="city-detail"id="city-3">
+                    <div class="city-info">
+                        <span class="bold-text">London</span>
+                        <span class="bold-stext">10:00</span>
+                        <span class="bold-stext">2-Mar-2022</span>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="precipitationIcon.svg">
+                            <span>53%</span>
+                        </div>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/precipitationIcon.svg" alt="precipitationIcon.svg">
+                            <span>10%</span>
+                        </div>
+                    </div>
+                    <div class="temp-info">
+                        <img class="temp-icon" src="Assets/HTML&CSS/Weather Icons/sunnyIcon.svg" alt="sunnyIcon.svg">
+                        <span class="bold-text">25 °C</span>
+                        <div class="top-city-icon">
+                            <img class="city-icon" src="Assets/HTML&CSS/Icons_for_cities/london.svg" alt="city-image">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="city-detail" id="city-4">
+                    <div class="city-info">
+                        <span class="bold-text">London</span>
+                        <span class="bold-stext">10:00</span>
+                        <span class="bold-stext">2-Mar-2022</span>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                        <div>
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/precipitationIcon.svg" alt="precipitationIcon.svg">
+                            <span>10%</span>
+                        </div>
+                    </div>
+                    <div class="temp-info">
+                        <img class="temp-icon" src="Assets/HTML&CSS/Weather Icons/sunnyIcon.svg" alt="sunnyIcon.svg">
+                        <span class="bold-text">25 °C</span>
+                        <div class="top-city-icon">
+                            <img class="city-icon" src="Assets/HTML&CSS/Icons_for_cities/london.svg" alt="city-image">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            </ul>
+        </div>
+                <a class="next-prev" id="next" href="#">&#8250;</a>
+            </div>
+        </div>
+    </section>
+
+<!-- this section displays the top cities around the world continents wise and provides the users to sort according to the name and temperature-->
+
+        <div class="main-container-3">
+            <div class="continents-header"> 
+                <div class="continents-text">Cities across continents at a Glance</div>
+                <div class="continents-name">
+                    <div id="continents-name">Continents Name <span><img id="continent-arrow" class="arrow" src="Assets/HTML&CSS/General Images & Icons/arrowDown.svg" alt="arrowDown.svg" ></span></span></div>
+                    <div id="continents-temperature" class="tab">Temperature <span><img id="temperature-arrow" class="arrow" src="Assets/HTML&CSS/General Images & Icons/arrowUp.svg" alt="arrowUp.svg" ></span></span></div>
+                </div>
+            </div>
+            
+            <div class="continents-grid">
+                <div class="continents-card" id="continent-city-1">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-2">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-3">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-4">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-5">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-6">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-7">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-8">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-9">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continents-card" id="continent-city-10">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="continents-card" id="continent-city-11">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="continents-card" id="continent-city-12">
+                    <div class="continent-city">
+                        <div class="cont-name">Asia</div>
+                        <div class="city-name">Delhi, 10:00 AM</div>
+                    </div>
+                    <div class="weather-info">
+                        <div class="bold-text">38°C</div>
+                        <div class="humidity-info">
+                            <img class="humidity" src="Assets/HTML&CSS/Weather Icons/humidityIcon.svg" alt="humidityIcon.svg">
+                            <span>53%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+
+    </body>
+</html>
