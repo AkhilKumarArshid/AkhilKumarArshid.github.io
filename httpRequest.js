@@ -58,7 +58,7 @@ function getCityDateAndTime(city) {
         method: "GET",
         redirect: "follow",
       };
-      let url = "https://soliton.glitch.me/date-time?city=" + city;
+      let url = "https://soliton.glitch.me/?city=" + city;
 
       let result = fetch(url, requestOptions)
         .then((response) => response.json())
